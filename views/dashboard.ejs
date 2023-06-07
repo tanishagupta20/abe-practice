@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <p>Hi <%= name %></p>
+    <form
+      action="/user/upload/image"
+      enctype="multipart/form-data"
+      method="post"
+    >
+      <input type="file" name = "file" />
+      <input type="submit" value="Upload" />
+    </form>
+    <% if(image) {%>
+    <img src="<%=image%>" width="200px" height="200px" />
+
+    <% usersArr.forEach(element => { %>
+      <p><%=element.username%></p>
+    <% }); %>
+    <%}%>
+    <form action = "/logout">
+      <input type = "submit" value = "Logout" />
+    </form>
+  </body>
+</html>
